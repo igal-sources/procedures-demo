@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import ProceduresMain from "../procedures/ProceduresMain"
+import ProceduresMain from "../procedures-container/ProceduresMain"
 import NotFoundPage from "./not-found-page/NotFoundPage";
 
 export default () => (
