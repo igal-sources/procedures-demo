@@ -1,5 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
+import { Grid } from "semantic-ui-react";
+import Routes from "./components/main-container/appRoutes";
+import Header from "./components/main-container/header/Header";
+import "./App.scss";
 
 function App() {
   return (

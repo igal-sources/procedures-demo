@@ -1,0 +1,90 @@
+{
+  "Procedures": [
+    {
+      "ProcedureId": 1000000,
+      "Name": "Procedure 01",
+      "Description": "Procedure 01 Description",
+      "CreationDate": "2021-03-16 12:43:53.7033333",
+      "ModifyDate": "2021-03-16 12:43:53.7033333",
+      "ValidityDate": "Null",
+      "IsActive": true,
+      "IsDeleted": false,
+      "CreatingUserId": 1,
+      "ModifyUserId": 1,
+      "ProcedureGUID": "0456B357-DC66-4E0B-9E9B-7DAFA66A5C61",
+      "OrganizationId": 1,
+      "LockedByUserID": "NULL",
+      "IsLocked": false,
+      "ProcedureCondition": {
+        "ProcedureConditionID": 1000000,
+        "ProcedureID": 1000000,
+        "EventTypeID": 30101,
+        "Severity": 0,
+        "Priority": "NULL",
+        "StartAt": "00:00:00.0000000",
+        "EndAt": "23:59:59.0000000",
+        "GeoAreaID": "NULL",
+        "ScheduleID": "NULL"
+      },
+      "ProcedureSteps": [
+        {
+          "ProcedureStepID": 1000000,
+          "ProcedureID": 1000000,
+          "SequenceNumber": 1,
+          "Title": "Step 01",
+          "Instruction": "Step Instruction 01"
+        },
+        {
+          "ProcedureStepID": 1000001,
+          "ProcedureID": 1000000,
+          "SequenceNumber": 2,
+          "Title": "Step 02",
+          "Instruction": "Step Instruction 02"
+        }
+      ]
+    },
+    {
+      "ProcedureId": 1000001,
+      "Name": "Procedure 02",
+      "Description": "Procedure 02 Description",
+      "CreationDate": "2021-03-16 12:43:53.7033333",
+      "ModifyDate": "2021-03-16 12:43:53.7033333",
+      "ValidityDate": "Null",
+      "IsActive": true,
+      "IsDeleted": false,
+      "CreatingUserId": 1,
+      "ModifyUserId": 1,
+      "ProcedureGUID": "998E978A-A3D7-4F55-9B2C-FC556D7B68E9",
+      "OrganizationId": 1,
+      "LockedByUserID": "NULL",
+      "IsLocked": false,
+      "ProcedureCondition": {
+        "ProcedureConditionID": 1000001,
+        "ProcedureID": 1000001,
+        "EventTypeID": 30101,
+        "Severity": 0,
+        "Priority": "NULL",
+        "StartAt": "00:00:00.0000000",
+        "EndAt": "23:59:59.0000000",
+        "GeoAreaID": "NULL",
+        "ScheduleID": "NULL"
+      },
+      "ProcedureSteps": [
+        {
+          "ProcedureStepID": 1000002,
+          "ProcedureID": 1000001,
+          "SequenceNumber": 1,
+          "Title": "Step 01",
+          "Instruction": "Step Instruction 01"
+        },
+        {
+          "ProcedureStepID": 1000003,
+          "ProcedureID": 1000001,
+          "SequenceNumber": 2,
+          "Title": "Step 02",
+          "Instruction": "Step Instruction 02"
+        }
+      ]
+    }
+  ]
+}
