@@ -10,7 +10,6 @@
   background: #9ab8ca !important;
   height: 100%;
   width: 100%;
-  margin-bottom: -50px;
   overflow: hidden;
 }
 
@@ -24,5 +23,6 @@
   height: calc(100vh - var(--main-header-height));
   background: #9ab8ca;
   padding: 0 !important;
-  margin-top: 15px;
+  margin-top: 25px;
+  margin-left: 25px;
 }

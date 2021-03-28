@@ -1,20 +1,20 @@
 {
   "Procedures": [
     {
-      "ProcedureId": 1000000,
+      "id": 1000000,
       "Name": "Procedure 01",
       "Description": "Procedure 01 Description",
       "CreationDate": "2021-03-16 12:43:53.7033333",
       "ModifyDate": "2021-03-16 12:43:53.7033333",
       "ValidityDate": "Null",
-      "IsActive": true,
-      "IsDeleted": false,
+      "IsActive": "true",
+      "IsDeleted": "false",
       "CreatingUserId": 1,
       "ModifyUserId": 1,
       "ProcedureGUID": "0456B357-DC66-4E0B-9E9B-7DAFA66A5C61",
       "OrganizationId": 1,
       "LockedByUserID": "NULL",
-      "IsLocked": false,
+      "IsLocked": "false",
       "ProcedureCondition": {
         "ProcedureConditionID": 1000000,
         "ProcedureID": 1000000,
@@ -44,20 +44,20 @@
       ]
     },
     {
-      "ProcedureId": 1000001,
+      "id": 1000001,
       "Name": "Procedure 02",
       "Description": "Procedure 02 Description",
       "CreationDate": "2021-03-16 12:43:53.7033333",
       "ModifyDate": "2021-03-16 12:43:53.7033333",
       "ValidityDate": "Null",
-      "IsActive": true,
-      "IsDeleted": false,
+      "IsActive": "true",
+      "IsDeleted": "false",
       "CreatingUserId": 1,
       "ModifyUserId": 1,
       "ProcedureGUID": "998E978A-A3D7-4F55-9B2C-FC556D7B68E9",
       "OrganizationId": 1,
       "LockedByUserID": "NULL",
-      "IsLocked": false,
+      "IsLocked": "false",
       "ProcedureCondition": {
         "ProcedureConditionID": 1000001,
         "ProcedureID": 1000001,
@@ -74,15 +74,15 @@
           "ProcedureStepID": 1000002,
           "ProcedureID": 1000001,
           "SequenceNumber": 1,
-          "Title": "Step 01",
-          "Instruction": "Step Instruction 01"
+          "Title": "Step 03",
+          "Instruction": "Step Instruction 03"
         },
         {
           "ProcedureStepID": 1000003,
           "ProcedureID": 1000001,
           "SequenceNumber": 2,
-          "Title": "Step 02",
-          "Instruction": "Step Instruction 02"
+          "Title": "Step 04",
+          "Instruction": "Step Instruction 04"
         }
       ]
     }

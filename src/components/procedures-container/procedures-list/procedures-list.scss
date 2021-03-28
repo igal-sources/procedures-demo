@@ -1,0 +1,27 @@
+.ProceduresList-container {
+
+  .ui.table {
+    &.ProceduresList-table {
+      position: relative;
+      border: none;
+    }
+    &.single.line {
+      .ProceduresList-table-header th {
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 22px;
+        align-items: center;
+        background: #000000;
+        color: #ffc000;
+        border-radius: 0px;
+      }
+
+      .ProceduresList-table-rows tr {
+        font-size: 14px;
+        font-weight: bolder;
+        color: #ffffff !important;
+        background-image: linear-gradient(#535b6a, #181d25) !important;
+      }
+    }
+  }
+}
