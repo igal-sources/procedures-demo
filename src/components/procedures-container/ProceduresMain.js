@@ -21,7 +21,7 @@ const ProceduresMain = () => {
   useEffect(() => {
     getAllProcedures().then((res) => {
       setProcedures(res.data);
-     // setSelectedProcedure(res.data[0]);      
+      setSelectedProcedure(res.data[0]);      
     });
   }, []);
 

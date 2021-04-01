@@ -15,14 +15,14 @@ const ProceduresFrom = ({ procedure }) => {
 
   return (
     <div className="ProceduresFrom-container">
-      <div className="ProceduresFrom-header">Conditions</div>
+      <div className="ProceduresFrom-header">From</div>
       <Form>
         <Form.Group as={Row}>
           <Form.Label column sm="4">
             Name
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedureFrom.Name} />
+            <Form.Control size="sm" type="text" value={procedureFrom.Name} readOnly />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -30,7 +30,7 @@ const ProceduresFrom = ({ procedure }) => {
             Create By
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedureFrom.CreatingUserId} />
+            <Form.Control size="sm" type="text" value={procedureFrom.CreatingUserId} readOnly />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -38,7 +38,7 @@ const ProceduresFrom = ({ procedure }) => {
             Creation Time
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedureFrom.CreationDate} />
+            <Form.Control size="sm" type="text" value={procedureFrom.CreationDate} readOnly />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -46,7 +46,7 @@ const ProceduresFrom = ({ procedure }) => {
             Last Modification User
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedureFrom.ModifyUserId} />
+            <Form.Control size="sm" type="text" value={procedureFrom.ModifyUserId} readOnly />
           </Col>
         </Form.Group>
         <Form.Group as={Row} id="formGridCheckbox">
@@ -54,12 +54,22 @@ const ProceduresFrom = ({ procedure }) => {
             Is Active
           </Form.Label>
           <Col sm="8">
-            <Form.Control
+            <Form.Check
+             className="mb-3"
               size="sm"
               type="checkbox"
-              label="Is Active"
+          
               checked={procedureFrom.IsActive}
+              readOnly 
             />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm="4">
+            Description
+          </Form.Label>
+          <Col sm="8">
+            <Form.Control size="sm" type="text" value={procedureFrom.Description} readOnly />
           </Col>
         </Form.Group>
       </Form>

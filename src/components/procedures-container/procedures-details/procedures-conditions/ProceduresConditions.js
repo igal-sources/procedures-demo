@@ -9,7 +9,7 @@ const ProceduresConditions = ({ procedureCondition }) => {
 
   useEffect(() => {
     setCondition(procedureCondition);
-  }, []);
+  }, [procedureCondition]);
 
   return (
     <div className="ProceduresConditions-container">

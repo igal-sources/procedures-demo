@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
+import ComponentTitle from "../../../shared/component-title/ComponentTitle";
 import "./procedures-steps.scss";
 
 const ProceduresSteps = ({ procedure }) => {
@@ -13,11 +14,9 @@ const ProceduresSteps = ({ procedure }) => {
 
   return (
     <div className="ProceduresSteps-container">
+      <ComponentTitle title="Steps" />
       <Table singleLine className="ProceduresSteps-table">
-        <Table.Header>
-          <Table.Row className="ProceduresSteps-table-header">
-            <Table.HeaderCell colSpan="3">Steps</Table.HeaderCell>
-          </Table.Row>
+        <Table.Header>          
           <Table.Row className="ProceduresSteps-table-header">
             <Table.HeaderCell colSpan="3">Instructions :</Table.HeaderCell>
           </Table.Row>
