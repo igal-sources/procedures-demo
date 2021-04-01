@@ -1,18 +1,17 @@
 import React from "react";
 import { Table } from "semantic-ui-react";
 import { EmptyFn } from "../../../shared/types";
+import ComponentTitle from "../../../shared/component-title/ComponentTitle";
 import "./procedures-list.scss";
 
-const ProceduresList = ({procedures, onSelected = EmptyFn}) => {
-  console.log('procedures: ', procedures);
-  
+const ProceduresList = ({ procedures, onSelected = EmptyFn }) => {
+  //console.log("ProceduresList: ", procedures);
+
   return (
     <div className="ProceduresList-container">
+      <ComponentTitle title={"Procedures"}/>
       <Table singleLine className="ProceduresList-table">
-        <Table.Header>
-          <Table.Row className="ProceduresList-table-header">
-            <Table.HeaderCell colSpan="5">Procedures</Table.HeaderCell>
-          </Table.Row>
+        <Table.Header>        
           <Table.Row className="ProceduresList-table-rows">
             <Table.HeaderCell>System Id</Table.HeaderCell>
             <Table.HeaderCell>Active</Table.HeaderCell>

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
-//import { getProcedure } from "../../../services/procedures-http.service";
 import "./procedures-steps.scss";
 
-const ProceduresSteps = ({ procedureSteps }) => {
+const ProceduresSteps = ({ procedure }) => {
   const [steps, setSteps] = useState([]);
-  console.log("ProceduresSteps: ", steps);
+  //console.log("ProceduresSteps: ", steps);
+
+  useEffect(() => {
+    const { ProcedureSteps = [] } = procedure;
+      setSteps(ProcedureSteps);
+  }, [localStorage.getItem("procedureId")]);
 
   return (
     <div className="ProceduresSteps-container">
@@ -25,8 +29,8 @@ const ProceduresSteps = ({ procedureSteps }) => {
         </Table.Header>
 
         <Table.Body>
-          {procedureSteps &&
-            procedureSteps.map((row) => (
+          {steps &&
+            steps.map((row) => (
               <Table.Row key={row.SequenceNumber}>
                 <Table.Cell>{row.SequenceNumber}</Table.Cell>
                 <Table.Cell>{row.Title}</Table.Cell>

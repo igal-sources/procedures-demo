@@ -1,24 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "semantic-ui-react";
-import ProceduresSteps from "../procedures-steps/ProceduresSteps";
+import ProceduresConditions from "./procedures-conditions/ProceduresConditions";
+import ProceduresFrom from "./procedures-from/ProceduresFrom";
+import ComponentTitle from "../../../shared/component-title/ComponentTitle";
+import new_procedure from "../../../images/32_new_procedure.png";
 import "./procedures-details.scss";
 
-const ProceduresDetails = () => {
-  const [procedureId, setProcedureId] = useState(localStorage.getItem("procedureId"));
-  // const procedureId = localStorage.getItem("procedureId");
+const ProceduresDetails = ({ procedure }) => {
+  const [selectedProcedure, setSelectedProcedure] = useState({});
+  const [procedureName, setProcedureName] = useState("");
+  const [condition, setCondition] = useState({});
+
+  //console.log("ProceduresDetails - condition: ", condition);
+  //console.log("selectedProcedure: ", selectedProcedure);
+
+  useEffect(() => {
+    setSelectedProcedure(procedure);
+    const { ProcedureCondition = {} } = procedure;
+    const { Name = "" } = procedure;
+    setProcedureName(Name);
+    setCondition(ProcedureCondition);
+  }, [procedure]);
+
   return (
     <div className="ProceduresDetails-container">
-      <Grid columns={2} divided>
-        <Grid.Row>
-          <Grid.Column>1</Grid.Column>
-          <Grid.Column>2</Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row columns={1}>
-          <Grid.Column>
-            <ProceduresSteps procedureId={procedureId} />
-          </Grid.Column>
-        </Grid.Row>
+      <ComponentTitle title={procedureName} image={new_procedure} />
+      <Grid>
+        <Grid.Column className="ProceduresDetails-Conditions" width={8}>
+          <ProceduresConditions procedureCondition={condition} />
+        </Grid.Column>
+        <Grid.Column className="ProceduresConditions-From" width={8}>
+          <ProceduresFrom procedure={procedure} />
+        </Grid.Column>
       </Grid>
     </div>
   );

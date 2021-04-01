@@ -1,0 +1,21 @@
+.ProceduresConditions-container {
+  margin-right: 20px;
+  .form.ui.form input[type="text"] {
+    color: white !important;
+    height: 23px;
+  }
+  .ui.form.selection.dropdown {
+    height: 23px !important;
+  }
+
+  .ProceduresConditions-header {
+    height: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    vertical-align: middle;
+    background: #000000;
+    color: #fbff00;
+    border-radius: 0px;
+  }
+}

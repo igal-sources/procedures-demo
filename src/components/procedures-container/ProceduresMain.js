@@ -2,32 +2,26 @@ import React, { useEffect, useState } from "react";
 import { Grid } from "semantic-ui-react";
 import { getAllProcedures, getProcedure } from "../../services/procedures-http.service";
 import ProceduresList from "./procedures-list/ProceduresList";
-import ProceduresConditions from "./procedures-conditions/ProceduresConditions";
+import ProceduresDetails from "./procedures-details/ProceduresDetails";
 import ProceduresSteps from "./procedures-steps/ProceduresSteps";
 import "./procedures-main.scss";
 
 const ProceduresMain = () => {
   const [procedures, setProcedures] = useState([]);
-  const [steps, setSteps] = useState([]);
-  console.log("ProceduresMain - steps: ", steps);
-  const [condition, setCondition] = useState({});
-  console.log("ProceduresMain - condition: ", condition);
-  const [procedureId, setProcedureId] = useState();
+  const [selectedProcedure, setSelectedProcedure] = useState({});
   console.log("procedures Main: ", procedures);
 
   const handleSelectedProcedure = (id) => {
-    setProcedureId(id);
     localStorage.setItem("procedureId", id);
     getProcedure(id).then((res) => {
-      const { ProcedureSteps = [], ProcedureCondition = {} } = res.data;
-      setSteps(ProcedureSteps);
-      setCondition(ProcedureCondition);
+      setSelectedProcedure(res.data);
     });
   };
 
   useEffect(() => {
     getAllProcedures().then((res) => {
       setProcedures(res.data);
+     // setSelectedProcedure(res.data[0]);      
     });
   }, []);
 
@@ -42,8 +36,8 @@ const ProceduresMain = () => {
           />
         </Grid.Column>
         <Grid.Column className="ProceduresMain-ProceduresConditions" width={8}>
-          <ProceduresConditions Condition={condition} />
-          <ProceduresSteps procedureSteps={steps} />
+          <ProceduresDetails procedure={selectedProcedure} />
+          <ProceduresSteps procedure={selectedProcedure} />
         </Grid.Column>
       </Grid>
     </div>

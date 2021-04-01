@@ -18,8 +18,8 @@
       "ProcedureCondition": {
         "ProcedureConditionID": 1000000,
         "ProcedureID": 1000000,
-        "EventTypeID": 30101,
-        "Severity": 0,
+        "EventTypeID": 10202,
+        "Severity": 2,
         "Priority": "NULL",
         "StartAt": "00:00:00.0000000",
         "EndAt": "23:59:59.0000000",
@@ -61,8 +61,8 @@
       "ProcedureCondition": {
         "ProcedureConditionID": 1000001,
         "ProcedureID": 1000001,
-        "EventTypeID": 30101,
-        "Severity": 0,
+        "EventTypeID": 10186,
+        "Severity": 1,
         "Priority": "NULL",
         "StartAt": "00:00:00.0000000",
         "EndAt": "23:59:59.0000000",
