@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Grid } from "semantic-ui-react";
 import { getAllProcedures, getProcedure } from "../../services/procedures-http.service";
 import ProceduresList from "./procedures-list/ProceduresList";
@@ -7,9 +7,19 @@ import ProceduresSteps from "./procedures-steps/ProceduresSteps";
 import "./procedures-main.scss";
 
 const ProceduresMain = () => {
+  const isCancelled = useRef(false);
   const [procedures, setProcedures] = useState([]);
   const [selectedProcedure, setSelectedProcedure] = useState({});
+  console.log('selectedProcedure: ', selectedProcedure);
   console.log("procedures Main: ", procedures);
+
+  const fetchData = () => {
+    getAllProcedures().then((res) => {
+      setProcedures(res.data);
+      setSelectedProcedure(res.data[0]);
+      console.log("res.data[0]: ", selectedProcedure);
+    });
+  };
 
   const handleSelectedProcedure = (id) => {
     localStorage.setItem("procedureId", id);
@@ -19,10 +29,11 @@ const ProceduresMain = () => {
   };
 
   useEffect(() => {
-    getAllProcedures().then((res) => {
-      setProcedures(res.data);
-      setSelectedProcedure(res.data[0]);      
-    });
+    !isCancelled.current && fetchData();
+    return () => {
+      isCancelled.current = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

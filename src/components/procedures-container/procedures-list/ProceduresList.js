@@ -10,7 +10,7 @@ const ProceduresList = ({ procedures, onSelected = EmptyFn }) => {
   return (
     <div className="ProceduresList-container">
       <ComponentTitle title={"Procedures"}/>
-      <Table singleLine className="ProceduresList-table">
+      <Table singleLine inverted selectable>
         <Table.Header>        
           <Table.Row className="ProceduresList-table-rows">
             <Table.HeaderCell>System Id</Table.HeaderCell>
@@ -20,7 +20,6 @@ const ProceduresList = ({ procedures, onSelected = EmptyFn }) => {
             <Table.HeaderCell>Severity</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
-
         <Table.Body>
           {procedures.map((row) => (
             <Table.Row positive key={row.id} onClick={() => onSelected(row.id)}>

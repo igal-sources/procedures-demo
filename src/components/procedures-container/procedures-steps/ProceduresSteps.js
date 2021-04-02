@@ -5,12 +5,12 @@ import "./procedures-steps.scss";
 
 const ProceduresSteps = ({ procedure }) => {
   const [steps, setSteps] = useState([]);
-  //console.log("ProceduresSteps: ", steps);
+  const { ProcedureSteps = [] } = procedure;
 
-  useEffect(() => {
-    const { ProcedureSteps = [] } = procedure;
-      setSteps(ProcedureSteps);
-  }, [localStorage.getItem("procedureId")]);
+  // useEffect(() => {
+  //   const { ProcedureSteps = [] } = procedure;
+  //     setSteps(ProcedureSteps);
+  // }, [localStorage.getItem("procedureId")]);
 
   return (
     <div className="ProceduresSteps-container">
@@ -28,8 +28,8 @@ const ProceduresSteps = ({ procedure }) => {
         </Table.Header>
 
         <Table.Body>
-          {steps &&
-            steps.map((row) => (
+          {ProcedureSteps &&
+            ProcedureSteps.map((row) => (
               <Table.Row key={row.SequenceNumber}>
                 <Table.Cell>{row.SequenceNumber}</Table.Cell>
                 <Table.Cell>{row.Title}</Table.Cell>

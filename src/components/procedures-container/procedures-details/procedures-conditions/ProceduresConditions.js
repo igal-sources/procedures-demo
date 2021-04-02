@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Form } from "react-bootstrap";
+import EventTypes from "../../../../assets/mock-data/EventTypes.json";
+import EventSeverities from "../../../../assets/mock-data/EventSeverities.json";
 import "./procedures-conditions.scss";
 
 const ProceduresConditions = ({ procedureCondition }) => {
@@ -21,10 +23,14 @@ const ProceduresConditions = ({ procedureCondition }) => {
           </Form.Label>
           <Col sm="8">
             <Form.Control size="sm" as="select" value={procedureCondition.EventTypeID}>
-              <option>10205</option>
-              <option>10203</option>
-              <option>10204</option>
-              <option>10202</option>
+              {EventTypes &&
+                EventTypes.map((e, EventTypeId) => {
+                  return (
+                    <option key={EventTypeId} value={e.EventTypeId}>
+                      {e.EventTypeName}
+                    </option>
+                  );
+                })}
             </Form.Control>
           </Col>
         </Form.Group>
@@ -47,10 +53,14 @@ const ProceduresConditions = ({ procedureCondition }) => {
           </Form.Label>
           <Col sm="8">
             <Form.Control size="sm" as="select" value={procedureCondition.Severity}>
-              <option value="0">Info</option>
-              <option value="1">Warning</option>
-              <option value="2">Error</option>
-              <option value="3">Fatal</option>
+              {EventSeverities &&
+                EventSeverities.map((e, EventSeverityID) => {
+                  return (
+                    <option key={EventSeverityID} value={e.EventSeverityID}>
+                      {e.EventSeverityName}
+                    </option>
+                  );
+                })}
             </Form.Control>
           </Col>
         </Form.Group>
