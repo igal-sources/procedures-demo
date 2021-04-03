@@ -7,7 +7,7 @@ const ProceduresFrom = ({ procedure }) => {
   return (
     <div className="ProceduresFrom-container">
       <div className="ProceduresFrom-header">From</div>
-      <Form>
+      <Form className="ProceduresFrom-Form">
         <Form.Group as={Row}>
           <Form.Label column sm="3">
             Name

@@ -16,7 +16,7 @@ const ProceduresConditions = ({ procedureCondition }) => {
   return (
     <div className="ProceduresConditions-container">
       <div className="ProceduresConditions-header">Conditions</div>
-      <Form>
+      <Form className="ProceduresConditions-Form">
         <Form.Group as={Row}>
           <Form.Label column sm="4">
             Event Type

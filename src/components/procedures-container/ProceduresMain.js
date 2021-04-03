@@ -39,14 +39,14 @@ const ProceduresMain = () => {
   return (
     <div className="ProceduresMain-container">
       <Grid>
-        <Grid.Column className="ProceduresMain-ProceduresList" width={8}>
+        <Grid.Column className="ProceduresMain-ProceduresList" width={10}>
           <ProceduresList
             procedures={procedures}
             onSelected={(id) => handleSelectedProcedure(id)}
             className="ProceduresMain-ProceduresList"
           />
         </Grid.Column>
-        <Grid.Column className="ProceduresMain-ProceduresConditions" width={8}>
+        <Grid.Column className="ProceduresMain-ProceduresConditions" width={6}>
           <ProceduresDetails procedure={selectedProcedure} />
           <ProceduresSteps procedure={selectedProcedure} />
         </Grid.Column>
