@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Table } from "semantic-ui-react";
 import classNames from "classnames";
 import ComponentTitle from "../../../shared/component-title/ComponentTitle";
 import "./procedures-steps.scss";
 
-const ProceduresSteps = ({ procedure }) => {
+const ProceduresSteps = ({ procedure = {} }) => {
   const [activeRowId, setActiveRowId] = useState(undefined);
   const [steps, setSteps] = useState([]);
   const { ProcedureSteps = [] } = procedure;

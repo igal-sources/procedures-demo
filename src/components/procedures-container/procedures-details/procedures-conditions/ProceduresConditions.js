@@ -4,14 +4,8 @@ import EventTypes from "../../../../assets/mock-data/EventTypes.json";
 import EventSeverities from "../../../../assets/mock-data/EventSeverities.json";
 import "./procedures-conditions.scss";
 
-const ProceduresConditions = ({ procedureCondition }) => {
-  const [condition, setCondition] = useState({});
-
-  console.log("ProceduresConditions: ", condition);
-
-  useEffect(() => {
-    setCondition(procedureCondition);
-  }, [procedureCondition]);
+const ProceduresConditions = ({ procedureCondition = {}, isReadOnly }) => {
+  console.log('procedureCondition: ', procedureCondition);
 
   return (
     <div className="ProceduresConditions-container">
@@ -22,7 +16,14 @@ const ProceduresConditions = ({ procedureCondition }) => {
             Event Type
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" as="select" value={procedureCondition.EventTypeID}>
+            <Form.Control
+              size="sm"
+              as="select"
+              value={procedureCondition.EventTypeID}
+              isReadOnly={true}
+              disabled={isReadOnly}
+              readOnly={isReadOnly}
+            >
               {EventTypes &&
                 EventTypes.map((e, EventTypeId) => {
                   return (
@@ -39,7 +40,13 @@ const ProceduresConditions = ({ procedureCondition }) => {
             Event Sub Type
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" as="select" value={procedureCondition.EventTypeID}>
+            <Form.Control
+              size="sm"
+              as="select"
+              value={procedureCondition.EventTypeID}
+              disabled={isReadOnly}
+              readOnly={isReadOnly}
+            >
               <option>10205</option>
               <option>10203</option>
               <option>10204</option>
@@ -52,7 +59,13 @@ const ProceduresConditions = ({ procedureCondition }) => {
             Severity
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" as="select" value={procedureCondition.Severity}>
+            <Form.Control
+              size="sm"
+              as="select"
+              value={procedureCondition.Severity}
+              readOnly={isReadOnly}
+              disabled={isReadOnly}
+            >
               {EventSeverities &&
                 EventSeverities.map((e, EventSeverityID) => {
                   return (
@@ -69,7 +82,7 @@ const ProceduresConditions = ({ procedureCondition }) => {
             Location
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text"></Form.Control>
+            <Form.Control size="sm" type="text" readOnly={isReadOnly}></Form.Control>
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -77,7 +90,7 @@ const ProceduresConditions = ({ procedureCondition }) => {
             Recurring
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text"></Form.Control>
+            <Form.Control size="sm" type="text" readOnly={isReadOnly}></Form.Control>
           </Col>
         </Form.Group>
       </Form>

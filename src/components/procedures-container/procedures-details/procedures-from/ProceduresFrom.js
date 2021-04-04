@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
-//import { Grid } from "semantic-ui-react";
+import React from "react";
 import { Col, Row, Form } from "react-bootstrap";
 import "./procedures-from.scss";
 
-const ProceduresFrom = ({ procedure }) => {
+const ProceduresFrom = ({ procedure = {}, isReadOnly }) => {
+  console.log('ProceduresFrom: ', procedure);
+
   return (
     <div className="ProceduresFrom-container">
       <div className="ProceduresFrom-header">From</div>
@@ -13,7 +14,7 @@ const ProceduresFrom = ({ procedure }) => {
             Name
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedure.Name} readOnly />
+            <Form.Control size="sm" type="text" value={procedure.Name} readOnly={isReadOnly} />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -21,7 +22,7 @@ const ProceduresFrom = ({ procedure }) => {
             Create By
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedure.CreatingUserId} readOnly />
+            <Form.Control size="sm" type="text" value={procedure.CreatingUserId} readOnly={isReadOnly} />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -29,7 +30,7 @@ const ProceduresFrom = ({ procedure }) => {
             Creation Time
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedure.CreationDate} readOnly />
+            <Form.Control size="sm" type="text" value={procedure.CreationDate} readOnly={isReadOnly} />
           </Col>
         </Form.Group>
         <Form.Group as={Row}>
@@ -37,7 +38,7 @@ const ProceduresFrom = ({ procedure }) => {
             Last Modification User
           </Form.Label>
           <Col sm="8">
-            <Form.Control size="sm" type="text" value={procedure.ModifyUserId} readOnly />
+            <Form.Control size="sm" type="text" value={procedure.ModifyUserId} readOnly={isReadOnly} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} id="formGridCheckbox">
@@ -50,7 +51,7 @@ const ProceduresFrom = ({ procedure }) => {
               size="sm"
               type="checkbox"
               checked={procedure.IsActive}
-              readOnly
+              readOnly={isReadOnly}
             />
           </Col>
         </Form.Group>
@@ -64,7 +65,7 @@ const ProceduresFrom = ({ procedure }) => {
               type="textarea"
               rows={3}
               value={procedure.Description}
-              readOnly
+              readOnly={isReadOnly}
             />
           </Col>
         </Form.Group>

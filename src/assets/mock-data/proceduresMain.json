@@ -50,7 +50,7 @@
       "CreationDate": "2017-01-01T00:00:00",
       "ModifyDate": "2017-01-01T00:00:00",
       "ValidityDate": "2017-01-01T00:00:00",
-      "IsActive": true,
+      "IsActive": false,
       "IsDeleted": false,
       "CreatingUserId": 1,
       "ModifyUserId": 0,

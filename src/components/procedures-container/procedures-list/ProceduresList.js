@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table } from "semantic-ui-react";
+import { Table, Checkbox } from "semantic-ui-react";
 import classNames from "classnames";
 import { EmptyFn } from "../../../shared/types";
 import ComponentTitle from "../../../shared/component-title/ComponentTitle";
@@ -37,7 +37,9 @@ const ProceduresList = ({ procedures, onSelected = EmptyFn }) => {
               onClick={() => handleSelected(row.id)}
             >
               <Table.Cell>{row.id}</Table.Cell>
-              <Table.Cell>{row.IsActive}</Table.Cell>
+              <Table.Cell>
+                <Checkbox checked={row.IsActive} name={row.id} />
+              </Table.Cell>
               <Table.Cell>{row.Name}</Table.Cell>
               <Table.Cell>{row.ProcedureCondition.EventTypeID}</Table.Cell>
               <Table.Cell>{row.ProcedureCondition.Severity}</Table.Cell>
